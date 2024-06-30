@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Список машин</title>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .row {
+            display: flex;
+            gap: 5px;
+        }
+        .cell {
+            flex: 1;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container" th:each="car : ${cars}">
+    <div class="row">
+        <div class="cell" th:text="${car.getId()}">ID</div>
+        <div class="cell" th:text="${car.getModel()}">Model</div>
+        <div class="cell" th:text="${car.getColor()}">Color</div>
+    </div>
+</div>
+</body>
+</html>
